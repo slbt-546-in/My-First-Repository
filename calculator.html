@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 200px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <input type="text" id="result" disabled>
+    <br>
+    <input type="text" id="input1" placeholder="Enter first number">
+    <input type="text" id="input2" placeholder="Enter second number">
+    <br>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+    <script>
+        function calculate(operator) {
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+            let result;
+            switch (operator) {
+                case '+':
+                    result = input1 + input2;
+                    break;
+                case '-':
+                    result = input1 - input2;
+                    break;
+                case '*':
+                    result = input1 * input2;
+                    break;
+                case '/':
+                    result = input1 / input2;
+                    break;
+                default:
+                    result = 'Error';
+            }
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
